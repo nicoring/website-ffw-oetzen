@@ -1,0 +1,29 @@
+{
+  "name": "feuerwehr-oetzen",
+  "version": "0.0.0",
+  "authors": [
+    "Nico Ring <ringnico@web.de>"
+  ],
+  "description": "feuerwehr-oetzen website",
+  "main": "index.html",
+  "moduleType": [
+    "es6"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.4",
+    "mini-parallax": "~1.0.0",
+    "animate-scss": "~1.2.1",
+    "wowjs": "~1.1.0",
+    "lodash": "~3.10.1"
+  }
+}

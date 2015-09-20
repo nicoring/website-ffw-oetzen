@@ -1,0 +1,36 @@
+<header class="landing">
+
+  <nav class="site-nav">
+
+    <div class="page-links reveal-animation animated fade-in">
+      <!-- <div class="site-title">
+        <a class="site-title-link" href="{{ site.baseurl }}/">{{ site.title }}</a>
+      </div> -->
+
+      {% assign pages = site.pages | sort: 'order' %}
+      {% for page in pages %}
+        {% if page.title and page.noMenu == nil %}
+        <div class="page-link-wrapper">
+          <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+        </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+  </nav>
+
+  <div class="landing-text reveal-animation animated fade-in">
+    <div class="text-block centered">
+      Willkommen bei der Freiwilligen Feuerwehr Oetzen
+    </div>
+  </div>
+
+  <!-- animated scroll down button  -->
+  <a
+    href="#main-section"
+    data-scroll="true"
+    data-scroll-time="200"
+    class="scroll-down reveal-animation animated bounce-in-down">
+    </a>
+
+</header>

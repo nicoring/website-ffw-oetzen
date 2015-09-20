@@ -1,0 +1,80 @@
+footer.site-footer {
+  background-color: $gray-dark;
+  background-image: url(../images/logo_gull.png);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+
+  @include inner-shadow-top;
+
+  width: 100%;
+  padding: 72px 20px 20px 20px;
+
+  @include max-media($screen-sm) {
+    // height of joshinkan logo
+    // so logo does not cover any text
+    padding-bottom: 20px + 277px;
+  }
+
+  color: white;
+
+  a, a:hover, a:active, a:focus {
+    color: white;
+  }
+
+  .contact {
+    @extend .col-md-8, .col-xs-24;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .contact-text {
+    line-height: 40px;
+  }
+
+  .page-title {
+    @extend h3;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .page-links-wrapper {
+    @include make-lg-column(14);
+  }
+
+  .page-links {
+    @extend .col-md-6, .col-xs-24;
+    padding-bottom: 20px;
+  }
+
+  .page-link {
+    @extend .clearfix;
+
+    line-height: 32px;
+  }
+
+  .page-link-separator {
+    color: white;
+    opacity: 0.5;
+    height: 1px;
+
+    margin-top: 8px;
+    margin-bottom: 12px;
+  }
+
+  .footer-line {
+    @extend .text-center;
+
+    margin-top: 72px;
+
+    span {
+      @extend .clearfix;
+
+      &.copyright {
+        font-size: $font-size-small;
+        font-weight: $font-weight-thin;
+      }
+    }
+  }
+}

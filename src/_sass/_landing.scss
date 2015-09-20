@@ -1,0 +1,119 @@
+.header-wrapper {
+  .landing {
+    @include max-media($screen-sm) {
+      display: none;
+    }
+  }
+}
+
+header.landing {
+  @include max-media($screen-md-min) {
+    background-image: url(../images/header_background.jpg);
+  }
+  background-image: url(../images/header_background_large.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  width: 100%;
+  min-height: 744px;
+  position: relative;
+  margin-bottom: 0;
+  color: white;
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+
+  @include inner-shadow-top-bottom();
+
+  a, a:hover, a:active, a:focus {
+    color: white;
+  }
+
+  .site-nav {
+    margin-top: 24px;
+  }
+
+  .site-title-link, .page-link {
+    font-size: 32px;
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+  }
+
+  .page-links {
+    // margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .site-title {
+    // include branding here
+  }
+
+  .site-title, .page-link-wrapper {
+    display: inline;
+  }
+
+  .page-link, .site-title-link {
+    text-decoration: none;
+    padding: 4px 12px;
+
+    @include transition(color 0.1s ease-in);
+
+    &:hover {
+      color: $red;
+    }
+  }
+
+  .landing-text {
+    // @include make-xs-column-offset(2);
+    @include make-xs-column(20);
+
+    // @include make-sm-column-offset(5);
+    @include make-sm-column(14);
+
+    // margin-top: 72px;
+
+    @include text-shadow();
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+    font-size: 28px;
+
+    @include max-media($screen-sm) {
+      font-size: 20px;
+    }
+  }
+
+  @include min-media($screen-sm) {
+    .page-link-wrapper:nth-child(1) > .page-link {
+      @include branding();
+    }
+  }
+
+  .scroll-down {
+    @extend .clearfix;
+
+    width: 120px;
+    height: 120px;
+    // margin: 0 auto;
+    margin-bottom: 24px;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url(../images/scroll_down_arrow.png);
+
+    cursor: pointer;
+
+    // HOVER: OFF
+    @include transition(background-image 0.05s ease-in-out);
+
+    &:hover {
+      background-image: url(../images/scroll_down_arrow_hover.png);
+
+      // HOVER: ON
+      @include transition(background-image 0.05s ease-in-out);
+    }
+  }
+
+}

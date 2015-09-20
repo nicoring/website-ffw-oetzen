@@ -1,0 +1,40 @@
+<footer id="footer" class="site-footer">
+
+  <div class="container">
+    <div class="row">
+
+      <div class="page-links-wrapper">
+        <div class="page-links">
+          <span class="page-title">Links</span>
+        </div>
+      </div> <!-- end page-links-wrapper -->
+
+      <div class="contact">
+        <!-- <div class="contact-text">
+          <span class="icon facebook"></span>
+          <a href="http://facebook.com{{ site.data.contact.facebook }}" target="_blank">{{ site.data.contact.facebook }}</a>
+        </div> -->
+        <div class="contact-text">
+          <span class="icon email"></span>
+          <a href="mailto:{{ site.data.contact.email }}">{{ site.data.contact.email }}</a>
+        </div>
+        <div class="contact-text">
+          <span class="icon phone"></span>
+          {{ site.data.contact.phone }}
+        </div>
+      </div>
+
+    </div> <!-- end row -->
+
+    <div class="row">
+      <div class="footer-line">
+        <span class="copyright">&copy; {{ site.author }} 2010 - {{ site.time | date: '%Y' }}</span>
+        <span class="impress">
+          <a href="/impressum">Impressum</a>
+          <a href="/datenschutz">Datenschutz</a>
+        </span>
+      </div>
+    </div>
+  </div>
+
+</footer>

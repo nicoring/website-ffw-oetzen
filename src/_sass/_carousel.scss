@@ -1,0 +1,50 @@
+.carousel {
+  .item {
+    max-height: 640px;
+  }
+
+  /** custom markup inside an item **/
+  .carousel-content {
+    height: 640px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  /** indicators **/
+  .carousel-indicators {
+    bottom: 8px;
+  }
+
+  /** controls **/
+  .carousel-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // next & previous arrows
+    span.next, span.previous {
+      display: block;
+      width: 41px;
+      height: 78px;
+      opacity: 0.7;
+
+      @include transition(opacity 0.1s ease-in-out);
+    }
+
+    span.next {
+      background-image: url(../images/next.png);
+    }
+
+    span.previous {
+      background-image: url(../images/previous.png);
+    }
+
+    &:hover {
+      span.next, span.previous {
+        opacity: 1;
+      }
+    }
+  }
+}

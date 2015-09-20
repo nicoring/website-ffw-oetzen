@@ -1,0 +1,114 @@
+.card-wrapper {
+
+  @extend .col-md-8, .col-sm-8, .col-xs-20;
+  padding: 0;
+  margin-bottom: 20px;
+
+  &.center {
+    @extend .col-md-offset-8, .col-sm-offset-4, .col-xs-offset-2;
+  }
+
+  &.offset-left {
+    @extend .col-md-offset-3, .col-sm-offset-3, .col-xs-offset-2;
+  }
+
+  &.offset-left-small {
+    @extend .col-md-offset-2, .col-sm-offset-2, .col-xs-offset-2;
+  }
+
+  &.large {
+    @extend .col-md-12, .col-sm-20, .col-xs-20;
+    padding: 0;
+
+    &.center {
+      @extend .col-md-offset-6, .col-md-offset-2, .col-xs-offset-2;
+    }
+  }
+
+  &.small {
+    @extend .col-md-4, .col-sm-10, .col-xs-16;
+    padding: 0;
+
+    &.center {
+      @extend .col-md-offset-10, .col-sm-offset-4, .col-xs-offset-4;
+    }
+  }
+
+  @include shadow-smooth;
+  border-radius: 4px;
+  color: $seconday-text-color;
+
+  .card-body {
+    @extend .clearfix;
+
+    width: 100%;
+    background: white;
+    @include border-bottom-radius(4px);
+
+    padding: 24px;
+  }
+
+  .card-image-wrapper {
+    width: 100%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .card-label-wrapper {
+    width: 100%;
+    position: absolute;
+    margin-top: - $line-height-computed / 2;
+
+    .card-label-circle, .card-label {
+      position: absolute;
+      left: 50%;
+      margin-left: -60px;
+
+      font-size: $font-size-small;
+      background-color: white;
+
+      border-radius: $line-height-computed + 8px;
+      padding: 3px;
+    }
+
+    .card-label-circle {
+      @include square($line-height-computed);
+      z-index: 6;
+    }
+
+    .card-label {
+      @include size(120px, $line-height-computed);
+      @include shadow-bottom;
+      z-index: 5;
+
+      padding-left: $line-height-computed + 8px;
+    }
+
+  }
+
+  .card-text-small {
+    font-size: $font-size-small;
+    padding: 4px;
+  }
+
+  .card-text-xs {
+    font-size: ceil(($font-size-small * 0.85));
+    padding: 4px;
+  }
+
+  .card-text-header {
+    color: black;
+    font-size: $font-size-base;
+    font-weight: $headings-font-weight;
+    padding: 4px;
+  }
+
+  .card-image-gradient {
+    @include gradient-vertical(rgba(0,0,0,0), rgba(0,0,0,0.9), 60%, 100%);
+    @include border-top-radius(4px);
+  }
+
+}

@@ -1,0 +1,10 @@
+#index-container {
+  .welcome {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(../images/showcase/welcome.jpg);
+
+    min-height: 640px;
+  }
+}

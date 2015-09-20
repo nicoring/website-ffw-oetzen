@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="660px" height="460px" viewBox="0 0 660 460" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="mail80" sketch:type="MSLayerGroup" fill="#FFFFFF">
+            <g id="Group" sketch:type="MSShapeGroup">
+                <path d="M632.2,22.3 L356.2,245.6 C341.5,257.6 317.4,257.6 302.7,245.6 L26.7,22.3 C17.3,14.7 0.5,21.3 0.5,35.1 L0.5,424.8 C0.5,443.7 16,459.2 34.9,459.2 L625.2,459.2 C644.1,459.2 659.6,443.7 659.6,424.8 L659.6,35.1 C659.5,19.7 643.3,13.4 632.2,22.3 L632.2,22.3 Z" id="Shape"></path>
+                <path d="M70.4,22.3 L303.5,210.8 C318.2,222.6 342.3,222.6 357,210.8 L590,22.3 C604.7,10.5 601.3,0.7 582.4,0.7 L78,0.7 C58.9,0.8 55.7,10.5 70.4,22.3 L70.4,22.3 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

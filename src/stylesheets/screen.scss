@@ -1,0 +1,414 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+@import "variables";
+@import "vendor/bootstrap";
+@import "vendor/animate/animate";
+@import "fonts/fonts";
+
+h1, h2, h3 {
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+}
+
+@mixin max-media($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+@mixin min-media($device) {
+    @media screen and (min-width: $device) {
+        @content;
+    }
+}
+
+@mixin min-max-media($device-min, $device-max) {
+  @media screen and (min-width: $device-min) and (max-width: $device-max) {
+    @content;
+  }
+}
+
+@mixin inner-shadow-top() {
+  box-shadow: inset 0 2px 3px rgba(black, 0.5);
+}
+
+@mixin inner-shadow-bottom() {
+  box-shadow: inset 0 -2px 3px rgba(black, 0.5);
+}
+
+@mixin inner-shadow-left() {
+  box-shadow: inset 2px 0 3px rgba(black, 0.5);
+}
+
+@mixin inner-shadow-right() {
+  box-shadow: inset -2px 0 3px rgba(black, 0.5);
+}
+
+@mixin inner-shadow-top-bottom() {
+  box-shadow: inset 0 -2px 3px rgba(black, 0.5),
+              inset 0 2px 3px rgba(black, 0.5);
+}
+
+@mixin inner-shadow() {
+  box-shadow: inset 0 2px 3px rgba(black, 0.5),
+              inset 0 -2px 3px rgba(black, 0.5),
+              inset 2px 0 3px rgba(black, 0.5),
+              inset -2px 0 3px rgba(black, 0.5);
+}
+
+@mixin shadow-bottom() {
+  box-shadow: 0 2px 3px rgba(black, 0.5);
+}
+
+@mixin shadow() {
+  box-shadow: 0 1px 2px rgba(black, 0.5),
+              0 -1px 2px rgba(black, 0.5),
+              1px 0 2px rgba(black, 0.5),
+              -1px 0 2px rgba(black, 0.5);
+}
+
+@mixin shadow-bottom-emphasized($color: black) {
+  box-shadow: 0 2px 3px rgba($color, 0.5), 1px 0 3px rgba($color, 0.5), -1px 0 3px rgba($color, 0.5);
+}
+
+@mixin shadow-smooth() {
+  box-shadow: 0px 10px 30px 0px rgba(black, 0.2);
+}
+
+@mixin text-shadow() {
+  text-shadow: 0px 2px 2px rgba(black, 0.8);
+}
+
+@mixin image-overlay() {
+  background-color: rgba(black, 0.3);
+}
+
+@mixin image-overlay-dark() {
+  background-color: rgba(black, 0.5);
+}
+
+@mixin image-label() {
+  position: absolute;
+  left: 5%;
+  bottom: 5%;
+  z-index: 2;
+  width: 90%;
+  color: white;
+
+  padding: 8px;
+
+  @include image-overlay;
+  @include transition(background-color 0.1s ease-in);
+
+  .label-header {
+    margin-top: 0;
+  }
+
+  .label-text {
+    font-size: $font-size-base;
+    font-weight: $font-weight-thin;
+    line-height: $font-size-base;
+  }
+
+  .label-text-small {
+    font-size: $font-size-small;
+    font-weight: $font-weight-thin;
+    line-height: $font-size-small;
+  }
+}
+
+@mixin image-and-label() {
+  position: relative;
+
+  img {
+    width: 100%;
+  }
+
+  .image-label {
+    @include image-label()
+  }
+}
+
+@mixin branding() {
+  padding-left: 56px;
+  line-height: 48px;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    // top: 12px;
+    // left: 0;
+    width: 48px;
+    height: 48px;
+
+    background-image: url(../images/logo_gull.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+  }
+}
+
+//== Textblocks
+
+.spaced {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+.empty-block {
+  @extend .clearfix;
+  display: block;
+  height: 16px;
+  margin: 0;
+  padding: 0;
+
+  &.large {
+    height: 36px;
+  }
+}
+
+@mixin text-block-column-widths() {
+  @include make-md-column(12);
+  @include make-sm-column(12);
+  @include make-xs-column(20);
+}
+
+@mixin text-block-column() {
+  @include text-block-column-widths();
+  @include make-md-column-offset(6);
+  @include make-sm-column-offset(6);
+  @include make-xs-column-offset(2);
+}
+
+.text-block-col {
+  @include text-block-column;
+}
+
+.text-header {
+  @extend h2, .text-center;
+  margin-bottom: 20px;
+}
+
+.text-block {
+  margin-bottom: 20px;
+
+  h1,h2,h3,h4,h5,h6 {
+    padding-left: $padding-large-horizontal;
+    padding-right: $padding-large-horizontal;
+  }
+
+  p {
+    padding: $padding-large-vertical $padding-large-horizontal;
+    line-height: $line-height-base * 1.2;
+  }
+
+  &.justified { text-align: justify; }
+  &.centered { text-align: center; }
+}
+
+.image-and-label {
+  @include image-and-label;
+}
+
+.text-block-image {
+  @include image-and-label;
+  display: inline-block;
+  margin-bottom: $padding-large-vertical;
+
+  @include translate(-50%, 0);
+  left: 50%;
+
+  img {
+    width: auto;
+    max-height: 360px;
+  }
+}
+
+.framed-text-block {
+  @extend .text-block;
+  @include shadow-bottom;
+  background-color: white;
+}
+
+.opaque-text-block {
+  @extend .framed-text-block;
+  background-color: rgba(white ,0.9);
+}
+
+blockquote {
+  border-left: 1px solid #ddd;
+
+  p {
+    font-size: $font-size-base;
+    color: $gray-light;
+  }
+
+  footer {
+    color: $gray-light;
+    font-size: $font-size-small;
+    font-style: italic;
+  }
+}
+
+.text-separator {
+  position: relative;
+  width: 90%;
+  left: 5%;
+  height: 32px;
+  margin-bottom: $padding-large-vertical;
+
+  background-image: url(/images/separator.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  // hr styles
+  &:before, &:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 50%;
+
+    width: 40%;
+    height: 0;
+    border-top: 1px solid $gray-light;
+  }
+
+  // right hr
+  &:before {
+    left: 60%;
+  }
+
+  // left hr
+  &:after {
+    right: 60%;
+  }
+}
+
+//== Page Related
+
+.page-content {
+  @extend .clearfix;
+}
+
+.page-title {
+  @extend .text-center;
+  font-size: 72px;
+  padding-top: 72px;
+  padding-bottom: 72px;
+  margin: 0;
+}
+
+.scroll-top {
+  @extend .text-center;
+
+  position: fixed;
+  z-index: 999;
+  top: 5%;
+  left: 5%;
+
+  width: 50px;
+  height: 50px;
+  display: none; // fades in on scrolling down!
+
+  > span {
+    @include transition(opacity 0.1s ease-in);
+    @include image-overlay-dark;
+
+    opacity: 0.3;
+    padding: 5px;
+
+    color: white;
+    font-size: 40px;
+
+    border-radius: 8px;
+  }
+
+  &:hover {
+    > span { opacity: 0.5; }
+  }
+}
+
+/*== Colors */
+
+.red {
+  color: $red;
+}
+
+.orange {
+  color: $orange;
+}
+
+.orange-background {
+  color: white;
+  background-color: $orange !important;
+}
+
+.cyan {
+  color: $cyan;
+}
+
+.cyan-background {
+  color: white;
+  background-color: $cyan !important;
+}
+
+.white {
+  color: white;
+}
+
+/*== Icons */
+
+.icon {
+  display: block;
+  float: left;
+  width: 36px;
+  height: 36px;
+  margin: 2px 8px 2px 0;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  &.email {
+    background-image: url(../images/mail80.svg);
+  }
+
+  &.phone {
+    background-image: url(../images/smartphone24.svg);
+  }
+}
+
+//== Structure related
+
+.frame {
+  background-color: $gray-lighter;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.banner {
+  width: 100%;
+  max-height: 748px;
+  overflow: hidden;
+
+  // parallax definitions need to set a height explicitly!
+  &.parallax {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+}
+
+@import
+        "footer",
+        "header",
+        "landing",
+        "card",
+        "carousel",
+        "index",
+        "contact"
+      ;

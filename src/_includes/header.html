@@ -1,0 +1,41 @@
+<header id="header" class="bar-only">
+
+  <nav class="site-nav">
+    <div class="navbar-fixed">
+      <div class="site-title">
+        <a class="site-title-link" href="{{ site.baseurl }}/">
+          {{ site.title }}
+        </a>
+      </div>
+
+      <button
+        type="button"
+        class="navbar-toggle"
+        data-toggle="collapse"
+        data-target="#collapsable"
+        aria-expanded="false">
+        <span class="close flaticon-delete85"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <div
+      id="collapsable"
+      class="collapse navbar-collapse">
+      <div class="page-links">
+        {% assign pages = site.pages | sort: 'order' %}
+        {% for p in pages %}
+          {% if p.title and p.noMenu == nil %}
+          <div class="page-link-wrapper">
+            <a class="page-link {% if p.url == page.url %}active{% endif %}" href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
+          </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+  </nav>
+
+</header>

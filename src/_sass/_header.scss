@@ -1,0 +1,144 @@
+.header-wrapper {
+  .bar-only {
+    display: none;
+    @include max-media($screen-sm) {
+      display: block;
+    }
+  }
+}
+
+header.bar-only {
+  width: 100%;
+  @include min-media($screen-sm) {
+    position: fixed;
+    z-index: 1000;
+  }
+
+  display: block;
+  background-color: white;
+  @include shadow-bottom();
+
+  a, a:hover, a:active, a:focus {
+    color: $gray-dark;
+  }
+
+
+  .site-nav {
+    padding: 12px;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+  }
+
+  .navbar-fixed {
+    display: inline-block;
+    width: 100%;
+
+    @include min-media($screen-sm) {
+      display: none;
+    };
+  }
+
+  .page-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @include max-media($screen-sm) {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+  }
+
+  .navbar-toggle {
+    color: $red;
+    float: right;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    .close {
+      color: $red;
+    }
+
+    .icon-bar {
+      background: $red
+    }
+
+    &[aria-expanded=false] {
+      border-color: $red;
+
+      .icon-bar {
+        display: block;
+      }
+      .close {
+        display: none;
+      }
+    }
+
+    &[aria-expanded=true] {
+      border-color: transparent;
+
+      .icon-bar {
+        display: none;
+      }
+      .close {
+        display: block;
+      }
+    }
+  }
+
+  .site-title {
+    display: inline;
+    float: left;
+
+    // include branding here
+    @include min-media($screen-sm) {
+      display: none;
+    }
+  }
+
+  .page-link-wrapper {
+    display: inline;
+  }
+
+  .page-link, .site-title-link {
+    font-size: 32px;
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+
+    text-decoration: none;
+    padding: 4px 12px;
+    color: $gray-dark;
+    white-space: nowrap;
+
+    @include transition(color 0.1s ease-in);
+
+    &:hover {
+      color: $red;
+    }
+
+    &.active {
+      color: $red;
+      text-decoration: underline;
+    }
+  }
+
+  .site-title-link {
+    @include branding();
+  }
+
+  @include min-media($screen-sm) {
+    .page-link-wrapper:nth-child(1) > .page-link {
+      @include branding();
+    }
+  }
+
+}
+
+.page-content.navbar-offset {
+  // navbar is fixed to top: reveal content below
+  @include min-media($screen-sm) {
+    padding-top: 72px;
+  }
+}

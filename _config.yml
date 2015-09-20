@@ -1,0 +1,22 @@
+# Site settings
+title: Feuerwehr Oetzen
+
+author: Nico Ring
+description:
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://feuerwehr-oetzen.de" # the base hostname & protocol for your site
+
+# Build settings
+source: src
+destination: public
+exclude:
+  - bower_components
+sass:
+  sass_dir: _sass
+  style: :compressed
+  sourcemaps: :auto
+markdown: kramdown
+
+# Plugins
+gems:
+  - jekyll-redirect-from
