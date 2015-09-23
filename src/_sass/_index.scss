@@ -7,4 +7,20 @@
 
     min-height: 640px;
   }
+
+  .kommando-wrapper {
+    .card-wrapper {
+      .card {
+        height: 330px;
+        img {
+          object-fit: cover; /* Do not scale the image */
+          object-position: center; /* Center the image within the element */
+          height: 170px;
+        }
+        .card-body {
+          padding: 10px 0;
+        }
+      }
+    }
+  }
 }

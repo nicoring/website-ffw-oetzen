@@ -1,0 +1,40 @@
+  -
+    title: Ortsbrandmeister
+    name: Harmut Müller
+    image: '/images/kommando/hartmut.jpg'
+    description: Ist verantwortlich für die Einsatzbereitschaft der Wehr. Zuständig für den vorbeugenden Brandschutz.
+  -
+    title: Stellv. Ortsbrandmeister
+    name: Jens Westermann
+    image: '/images/kommando/jens.jpg'
+    description: Vertritt den Ortsbrandmeister bei dessen Abwesenheit. Bildet aus, führt die Ausbildungsstatistik.
+  -
+    title: Gruppenführer
+    name: Sebastian Gade
+    image: '/images/kommando/sebastian.jpg'
+    description: Führt eine taktische Einheit, bildet aus.
+  -
+    title: Sicherheitsbeauftragter
+    name: Wolfgang Güttner
+    image: '/images/kommando/paule.jpg'
+    description: Unterstützt den Ortsbrandmeister bei allen Fragen zur Unfallverhütung und überwacht die Einhaltung der Sicherheitsbestimmungen.
+  -
+    title: Gerätewart
+    name: Thorsten Kirschke
+    image: '/images/kommando/kirschie.jpg'
+    description: Verantwortlich für die Einsatzbereitschaft von Ausrüstung und Gerät sowie die Einhaltung  von Prüffristen.
+  -
+    title: Kassenwart
+    name: Ulf-Achim Wittenberg
+    image: '/images/kommando/ulf.jpg'
+    description: Verantwortlich für die finanzlellen Belange der Wehr.
+  -
+    title: Schriftführer
+    name: Christian Schulte
+    image: '/images/kommando/christian.jpg'
+    description: Führt Protokolle bei Sitzungen und Versammlungen. Wickelt einen Teil des Schriftverkehrs der Feuerwehr ab.
+  -
+    title: Beisitzer
+    name: Marcel Scharnhop
+    image: '/images/kommando/hartmut.jpg'
+    description:

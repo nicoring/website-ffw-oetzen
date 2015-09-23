@@ -374,11 +374,15 @@ blockquote {
   background-position: center center;
 
   &.email {
-    background-image: url(../images/mail80.svg);
+    background-image: url(../images/icons/mail80.svg);
   }
 
   &.phone {
-    background-image: url(../images/smartphone24.svg);
+    background-image: url(../images/icons/smartphone24.svg);
+  }
+
+  &.address {
+    background-image: url(../images/icons/home153.svg);
   }
 }
 

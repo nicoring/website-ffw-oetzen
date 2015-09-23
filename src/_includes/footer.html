@@ -5,7 +5,21 @@
 
       <div class="page-links-wrapper">
         <div class="page-links">
-          <span class="page-title">Links</span>
+          <a href="/" class="page-title">Home</a>
+          <hr class="page-link-separator" />
+          <a href="/#gallerie" class="page-link">Gallerie</a>
+          <a href="/#kommando" class="page-link">Kommando</a>
+          <a href="/#anfahrt" class="page-link">Kontakt</a>
+        </div>
+        <div class="page-links">
+          <a href="/ausrüstung" class="page-title">Ausrüstung</a>
+          <hr class="page-link-separator" />
+          <a href="/#" class="page-link">Comming soon</a>
+        </div>
+        <div class="page-links">
+          <a href="/ausbildung" class="page-title">Ausbildung</a>
+          <hr class="page-link-separator" />
+          <a href="/#" class="page-link">Comming soon</a>
         </div>
       </div> <!-- end page-links-wrapper -->
 
@@ -14,6 +28,16 @@
           <span class="icon facebook"></span>
           <a href="http://facebook.com{{ site.data.contact.facebook }}" target="_blank">{{ site.data.contact.facebook }}</a>
         </div> -->
+        <h3>Kontakt</h3>
+        <hr class="page-link-separator" />
+        <div class="contact-text">
+          <span class="icon address"></span>
+          <p class="address-text">
+            {{ site.data.contact.name }} </br>
+            {{ site.data.contact.address.street }} </br>
+            {{ site.data.contact.address.zip }} {{ site.data.contact.address.city }}
+          </p>
+        </div>
         <div class="contact-text">
           <span class="icon email"></span>
           <a href="mailto:{{ site.data.contact.email }}">{{ site.data.contact.email }}</a>

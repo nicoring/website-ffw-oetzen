@@ -8,11 +8,13 @@
 
 header.landing {
   @include max-media($screen-md-min) {
-    background-image: url(../images/header_background.jpg);
+    background-image: url(../images/übung_action.jpg);
   }
-  background-image: url(../images/header_background_large.jpg);
+  background-color: rgba(0, 0, 0, 0.9);
+  background-image: url(../images/übung_action.jpg);
   background-repeat: no-repeat;
   background-position: center center;
+  background-size: 100%;
 
   width: 100%;
   min-height: 744px;
@@ -73,7 +75,7 @@ header.landing {
     // @include make-sm-column-offset(5);
     @include make-sm-column(14);
 
-    // margin-top: 72px;
+    margin-top: 460px;
 
     @include text-shadow();
     font-family: $headings-font-family;
@@ -94,25 +96,28 @@ header.landing {
   .scroll-down {
     @extend .clearfix;
 
-    width: 120px;
-    height: 120px;
+    span {
+      // width: 60px;
+      // height: 60px;
+      font-size: 4em;
+    }
     // margin: 0 auto;
     margin-bottom: 24px;
-
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-image: url(../images/scroll_down_arrow.png);
+    opacity: 0.8;
+    // background-repeat: no-repeat;
+    // background-position: center center;
+    // background-image: url(../images/scroll_down_arrow.png);
 
     cursor: pointer;
 
     // HOVER: OFF
-    @include transition(background-image 0.05s ease-in-out);
+    @include transition(opacity 0.05s ease-in-out);
 
     &:hover {
-      background-image: url(../images/scroll_down_arrow_hover.png);
-
+      // background-image: url(../images/scroll_down_arrow_hover.png);
+      opacity: 1;
       // HOVER: ON
-      @include transition(background-image 0.05s ease-in-out);
+      @include transition(opacity 0.05s ease-in-out);
     }
   }
 

@@ -11,61 +11,68 @@ module.exports = (grunt) ->
   grunt.initConfig
 
     copy:
-      bootstrap:
+      deploy:
         files: [{
           expand: true
-          cwd: "src/bower_components/bootstrap-sass/assets/stylesheets/"
-          src: ["**"]
-          dest: "src/_sass/vendor"
-        },
-        {
-          expand: true
-          cwd: "src/bower_components/bootstrap-sass/assets/javascripts/"
-          src: ["bootstrap.js"]
-          dest: "src/javascripts/vendor"
-        }]
-      glyphicons:
-        files: [{
-          expand: true
-          cwd: "src/bower_components/bootstrap-sass/assets/fonts/"
-          src: ["**"]
-          dest: "src/fonts"
-        }]
-      animate:
-        files: [{
-          expand: true
-          cwd: "src/bower_components/animate-scss/src"
-          src: ["**"]
-          dest: "src/_sass/vendor/animate"
-        }]
-      jquery:
-        files: [{
-          expand: true
-          cwd: "src/bower_components/jquery/dist/"
-          src: ["jquery.min.js", "jquery.min.map"]
-          dest: "src/javascripts/vendor"
-        }]
-      miniParallax:
-        files: [{
-          expand: true
-          cwd: "src/bower_components/mini-parallax/"
-          src: ["jquery.mini.parallax.js"]
-          dest: "src/javascripts/vendor"
-        }]
-      wow:
-        files: [{
-          expand: true
-          cwd: "src/bower_components/wowjs/dist"
-          src: ["wow.min.js"]
-          dest: "src/javascripts/vendor"
-        }]
-      lodash:
-        files: [{
-          expand: true
-          cwd: "src/bower_components/lodash/"
-          src: ["lodash.min.js"]
-          dest: "src/javascripts/vendor"
-        }]
+          src: ["public"]
+          dest: "/var/www/ffw-oetzen"
+          }]
+      vendor:
+        bootstrap:
+          files: [{
+            expand: true
+            cwd: "src/bower_components/bootstrap-sass/assets/stylesheets/"
+            src: ["**"]
+            dest: "src/_sass/vendor"
+          },
+          {
+            expand: true
+            cwd: "src/bower_components/bootstrap-sass/assets/javascripts/"
+            src: ["bootstrap.js"]
+            dest: "src/javascripts/vendor"
+          }]
+        glyphicons:
+          files: [{
+            expand: true
+            cwd: "src/bower_components/bootstrap-sass/assets/fonts/"
+            src: ["**"]
+            dest: "src/fonts"
+          }]
+        animate:
+          files: [{
+            expand: true
+            cwd: "src/bower_components/animate-scss/src"
+            src: ["**"]
+            dest: "src/_sass/vendor/animate"
+          }]
+        jquery:
+          files: [{
+            expand: true
+            cwd: "src/bower_components/jquery/dist/"
+            src: ["jquery.min.js", "jquery.min.map"]
+            dest: "src/javascripts/vendor"
+          }]
+        miniParallax:
+          files: [{
+            expand: true
+            cwd: "src/bower_components/mini-parallax/"
+            src: ["jquery.mini.parallax.js"]
+            dest: "src/javascripts/vendor"
+          }]
+        wow:
+          files: [{
+            expand: true
+            cwd: "src/bower_components/wowjs/dist"
+            src: ["wow.min.js"]
+            dest: "src/javascripts/vendor"
+          }]
+        lodash:
+          files: [{
+            expand: true
+            cwd: "src/bower_components/lodash/"
+            src: ["lodash.min.js"]
+            dest: "src/javascripts/vendor"
+          }]
 
     exec:
       bower:
@@ -79,6 +86,7 @@ module.exports = (grunt) ->
       source:
         files: [
           "src/_drafts/**/*"
+          "src/_data/**/*"
           "src/_includes/**/*"
           "src/_layouts/**/*"
           "src/_posts/**/*"
@@ -101,10 +109,17 @@ module.exports = (grunt) ->
           base: 'public'
           livereload: true
 
+
+
   grunt.registerTask "build", [
     "exec:bower"
-    "copy"
+    "copy:vendor"
     "exec:jekyll"
+  ]
+
+  grunt.registerTask "deploy", [
+    "build"
+    "copy:deploy"
   ]
 
   grunt.registerTask "serve", [
