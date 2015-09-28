@@ -42,9 +42,9 @@ $carousel-indicator-active-bg: $red;
 
 $enable-prefixes: true;
 
-$enable-fade-in: true;
-$enable-fade-in-up: true;
-$enable-fade-in-left: true;
-$enable-fade-in-right: true;
+$enable-fade-in: false;
+$enable-fade-in-up: false;
+$enable-fade-in-left: false;
+$enable-fade-in-right: false;
 
-$enable-bounce-in-down: true;
+$enable-bounce-in-down: false;
