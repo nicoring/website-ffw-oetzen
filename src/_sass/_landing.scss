@@ -8,10 +8,10 @@
 
 header.landing {
   @include max-media($screen-md-min) {
-    background-image: url(../images/übung_action.jpg);
+    background-image: url(../images/uebung_action.jpg);
   }
   background-color: rgba(0, 0, 0, 0.9);
-  background-image: url(../images/übung_action.jpg);
+  background-image: url(../images/uebung_action.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 100%;
