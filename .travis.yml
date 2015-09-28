@@ -3,7 +3,6 @@ node_js: "iojs"
 install:
   - npm install -g grunt-cli
   - npm install -g bower
-  - bundle install
   - npm install
   - bower install
 script:
