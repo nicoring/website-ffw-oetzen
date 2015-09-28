@@ -1,0 +1,17 @@
+install:
+  - npm install -g grunt-cli
+  - npm install -g bower
+  - bundle install
+  - npm install
+  - bower install
+script:
+  - grunt build
+# deploy:
+#   provider: s3
+#   access_key_id: AKIAJ7X54GBDV77NRKSQ
+#   secret_access_key:
+#     secure: S7M7drkp2pC9pgQKZL+Kb7C4RRMGW6WNWJ3GHav5aKcIKKicavboiqhSs+q7yPbRPnbmdit6SjWC96v4KhQzFf26rGs2lNf73jYiX9AwK/OMNXSIUVgI9HqrN7f2jLgqRKleuo7JNQTZ3/qjA9bBGzGX0UBood6B8/RhJnjO0NtTzW6acNU7Qi7ANnDd/XlAePeORdWzd2NSS1mXfsLmwH+ztKP0UjRpLoMbjjQ/pN7kZduWiuxi0JIa6YRzipa2FXvc+jbib2iwjILO9nDMWrPeaNjmWi1g1bsB6diuGDo30hsoJz23FhIUmwqDVjiM92YFecNWoxACNVqM2gNGKF7oraxJiiD8UskRIH7rJg5JDgDpYbBbYsbur6ghg9BfYU+8RM1LhP6Mn/+Wg5SF9vAvHNUwmcsmcOwwThUyjFBcRx2yRIv3cUycPMbX+DmUAVppObjnvhHqubbMwU57/Y3xHcyTbcRkjigMp0Z5zKCWcITxqsXQjyn1caGJom5NyckdjLzlD8gGvMiHCvv8C05jJBeMdCgXeo4gVz1WmgKXyQsxiK4NeOjhOpXJTk9DgfKeW7muyrj9cPwAwDa4d7FRgQj300XkFwxKOh1M4owtZXysKCeAEpwX0lBp7Nj5QaQPAouiF9ptUYmyBaKUqWepkpg70Hc5Xb6jUYOmdTw=
+#   bucket: ffw-oetzen-website
+#   local-dir: public
+#   region: eu-central-1
+#   skip_cleanup: true

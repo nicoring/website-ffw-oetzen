@@ -1,6 +1,4 @@
 .carousel {
-  // width: 80%;
-  // margin: 0 auto;
 
   .item {
     max-height: 640px;
@@ -20,34 +18,9 @@
     bottom: 8px;
   }
 
-  /** controls **/
-  .carousel-control {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    // next & previous arrows
-    span.next, span.previous {
-      display: block;
-      width: 41px;
-      height: 78px;
-      opacity: 0.7;
-
-      @include transition(opacity 0.1s ease-in-out);
-    }
-
-    span.next {
-      background-image: url(../images/next.png);
-    }
-
-    span.previous {
-      background-image: url(../images/previous.png);
-    }
-
-    &:hover {
-      span.next, span.previous {
-        opacity: 1;
-      }
-    }
+  .carousel-image {
+    object-fit: cover; /* Do not scale the image */
+    object-position: center; /* Center the image within the element */
+    width: 100%;
   }
 }

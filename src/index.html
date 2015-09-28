@@ -24,10 +24,7 @@ order: 0
       </div>
       <div class="col-sm-10 col-sm-offset-1">
         <div class="text-block justified">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed rerum veritatis assumenda corporis voluptas repudiandae eos fugiat quod natus necessitatibus dolores enim, maxime molestiae voluptates repellendus quos animi numquam. Nulla!</br>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed rerum veritatis assumenda corporis voluptas repudiandae eos fugiat quod natus necessitatibus dolores enim, maxime molestiae voluptates repellendus quos animi numquam. Nulla!
-          </p>
+          <p>{{ site.data.home_content.first_block | markdownify }}</p>
         </div>
       </div>
     </div>
@@ -38,32 +35,25 @@ order: 0
 
   <div class="row" id="gallerie">
     <div class="container">
-      <div class="col-sm-22 col-sm-offset-1">
+      <div class="col-sm-24">
         <div id="carousel-showcase" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
           <ol class="carousel-indicators">
-            <li data-target="#carousel-showcase" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-showcase" data-slide-to="1"></li>
-            <!-- <li data-target="#carousel-showcase" data-slide-to="2"></li> -->
+            {% for entry in site.data.gallerie %}
+              <li data-target="#carousel-showcase" data-slide-to="{{ forloop.index0}}" class="{% if forloop.first %}active{% endif %}"></li>
+            {% endfor %}
           </ol>
 
           <!-- Wrapper for slides -->
           <div class="carousel-inner" role="listbox">
             {% for entry in site.data.gallerie %}
             <div class="item {% if forloop.first %}active{% endif %}">
-              <img src="../images/{{entry.image}}" alt="{{entry.caption}}">
+              <img src="../images/{{entry.image}}" alt="{{entry.caption}}" class="carousel-image">
               <div class="carousel-caption">
                 {{entry.caption}}
               </div>
             </div>
-
             {% endfor %}
-            <!-- <div class="item">
-              <img src="../images/IMG_7150.jpg" alt="Gruppenfoto">
-              <div class="carousel-caption">
-                Gruppenfoto
-              </div>
-            </div> -->
           </div>
 
           <!-- Controls -->
@@ -125,7 +115,6 @@ order: 0
 
     <div class="col-sm-10 col-sm-offset-7">
       <div class="text-block justified">
-        <h3>Besuchen Sie uns</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed rerum veritatis assumenda corporis voluptas repudiandae eos fugiat quod natus necessitatibus dolores enim, maxime molestiae voluptates repellendus quos animi numquam. Nulla!</p>
       </div>
       <div class="empty-block large"></div>
