@@ -9,10 +9,35 @@ order: 0
   class="container-fluid">
 
   <h1 class="page-title red">Feuerwehr Oetzen</h1>
+  <div class="container">
+    <div class="row">
 
-  <div class="row">
+      <div class="col-sm-10 col-sm-offset-1">
+        <div class="image-and-label">
+          <img src="/images/100_jahre.jpg" alt="100-Jahr-Feier" />
+          <div class="image-label">
+            100 Jahre Feuerwehr Oetzen
+          </div>
+        </div>
+        <div class="empty-block"></div>
+      </div>
 
-    <div class="container">
+      <div class="col-sm-10 col-sm-offset-1">
+        <div class="text-block justified">
+          {{ site.data.home_content.first_block | markdownify }}
+        </div>
+      </div>
+
+    </div><!--end row -->
+
+    <div class="row spaced"></div>
+
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1">
+        <div class="text-block justified">
+          {{ site.data.home_content.history_1 | markdownify }}
+        </div>
+      </div>
       <div class="col-sm-10 col-sm-offset-1">
         <div class="image-and-label">
           <img src="/images/Handdruckspritze.jpg" alt="Handdruckspritze" />
@@ -22,14 +47,30 @@ order: 0
         </div>
         <div class="empty-block"></div>
       </div>
+    </div>
+
+    <div class="row spaced"></div>
+
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1">
+        <div class="image-and-label">
+          <img src="/images/gruppenfoto_1.jpg" alt="Gruppenfoto" />
+          <div class="image-label">
+            Gruppenfoto
+          </div>
+        </div>
+        <div class="empty-block"></div>
+      </div>
       <div class="col-sm-10 col-sm-offset-1">
         <div class="text-block justified">
-          <p>{{ site.data.home_content.first_block | markdownify }}</p>
+          {{ site.data.home_content.history_2 | markdownify }}
         </div>
       </div>
     </div>
 
   </div>
+
+
 
   <div class="row spaced"></div>
 
@@ -78,6 +119,8 @@ order: 0
     </div>
   </div> <!-- end .row -->
 
+  <div class="row spaced"></div>
+
   <div id="kommando" class="row">
     <div class="container">
       <h3 class="text-header">Kommando</h3>
@@ -108,6 +151,9 @@ order: 0
       </div>
     </div>
   </div>
+
+  <div class="row spaced"></div>
+
 
   <div
     id="anfahrt"

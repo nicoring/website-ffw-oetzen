@@ -155,8 +155,17 @@ h1, h2, h3 {
 //== Textblocks
 
 .spaced {
-  padding-top: 72px;
-  padding-bottom: 72px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  &.small {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  &.large {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 }
 
 .empty-block {
@@ -202,7 +211,9 @@ h1, h2, h3 {
   }
 
   p {
-    padding: $padding-large-vertical $padding-large-horizontal;
+    &.padded {
+      padding: $padding-small-vertical $padding-small-horizontal;
+    }
     line-height: $line-height-base * 1.2;
   }
 
