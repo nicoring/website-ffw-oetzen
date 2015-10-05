@@ -5,3 +5,4 @@ src/bower_components
 src/javascripts/vendor
 src/_sass/vendor
 credentials.csv
+*/**/*.psd
