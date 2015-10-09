@@ -7,6 +7,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-copy"
   grunt.loadNpmTasks "grunt-contrib-watch"
   grunt.loadNpmTasks "grunt-exec"
+  grunt.loadNpmTasks "grunt-shell-spawn"
 
   grunt.initConfig
 
@@ -66,12 +67,27 @@ module.exports = (grunt) ->
           src: ["lodash.min.js"]
           dest: "src/javascripts/vendor"
         }]
+      # jeditable:
+      #   files: [{
+      #     expand: true
+      #     cwd: "src/bower_components/editable/"
+      #     src: ["editable.min.js"]
+      #     dest: "src/javascripts/vendor"
+      #   }]
 
     exec:
       bower:
         cmd: "bower install"
-      jekyll:
+      jekyllProd:
+        cmd: "JEKYLL_ENV=production jekyll build --trace"
+      jekyllDev:
         cmd: "jekyll build --trace"
+
+    shell:
+      edit:
+        command: "node server.js"
+        options:
+          async: true
 
     watch:
       options:
@@ -92,7 +108,7 @@ module.exports = (grunt) ->
           "src/**/*.md"
         ]
         tasks: [
-          "exec:jekyll"
+          "exec:jekyllDev"
         ]
 
     connect:
@@ -103,16 +119,28 @@ module.exports = (grunt) ->
           livereload: true
 
 
-
-  grunt.registerTask "build", [
+  grunt.registerTask "build:dev", [
     "exec:bower"
     "copy"
-    "exec:jekyll"
+    "exec:jekyllDev"
+  ]
+
+  grunt.registerTask "build:prod", [
+    "exec:bower"
+    "copy"
+    "exec:jekyllProd"
   ]
 
   grunt.registerTask "serve", [
-    "build"
+    "build:dev"
     "connect:server"
+    "watch"
+  ]
+
+  grunt.registerTask "edit", [
+    "build:dev"
+    "connect:server"
+    "shell:edit"
     "watch"
   ]
 

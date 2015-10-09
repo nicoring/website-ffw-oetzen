@@ -3,7 +3,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
   <link rel="stylesheet" href="{{ "/stylesheets/screen.css" | prepend: site.baseurl }}">
@@ -20,6 +20,12 @@
   <script type="text/javascript" src="{{ "/javascripts/lib/smoothScroll.js" | prepend: site.baseurl }}"></script>
   <script type="text/javascript" src="{{ "/javascripts/lib/showAfter.js" | prepend: site.baseurl }}"></script>
   <script type="text/javascript" src="{{ "/javascripts/vendor/bootstrap.js" | prepend: site.baseurl }}"></script>
+
+  <!-- CMS add on -->
+  {% if jekyll.environment == "development" %}
+    <script type="text/javascript" src="{{ "/javascripts/lib/jquery.jeditable.js" | prepend: site.baseurl }}"></script>
+    <script type="text/javascript" src="{{ "/javascripts/lib/edit.js" | prepend: site.baseurl }}"></script>
+  {% endif %}
 
   <script type="text/javascript">
     $(function() {
