@@ -7,9 +7,9 @@ var bodyParser = require('body-parser');
 
 const yamlFilesPath = 'src/_data/';
 
-var configFiles = fs.readdirSync(yamlFilesPath);
+function configFiles() { return fs.readdirSync(yamlFilesPath) };
 
-console.log(configFiles);
+console.log(configFiles());
 
 function loadYamlString(fileName) {
   if (_.takeRight(fileName, 4).join('') != '.yml') {
@@ -30,6 +30,9 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
+
+// app.use(express.static('public'));
+
 // app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -48,14 +51,22 @@ function parseParams(params) {
   }
 }
 
-app.get('/:type/:id', function (req, res) {
+app.get('/edit/:type/:id', function (req, res) {
   var config = parseParams(req.params);
+  if (!(config.fileName + '.yml' in configFiles())) {
+    res.status(404).send("file does not exist")
+    return;
+  }
   var yamlContent = jsYaml.safeLoad(loadYamlString(config.fileName));
   res.send(yamlContent[config.index]);
 });
 
-app.post('/:type/:id', function (req, res) {
+app.post('/edit/:type/:id', function (req, res) {
   var config = parseParams(req.params);
+  if (!config.fileName + '.yml' in configFiles()) {
+    res.status(404).send("file does not exist")
+    return;
+  }
   var fileName = config.fileName + '.yml';
   // load yaml
   var yamlContent = jsYaml.safeLoad(loadYamlString(fileName));
@@ -69,9 +80,9 @@ app.post('/:type/:id', function (req, res) {
   res.send(req.body.value);
 });
 
-var server = app.listen(4001, function () {
+var server = app.listen(4001  , function () {
   var host = server.address().address;
   var port = server.address().port;
 
-  console.log('Example app listening at http://%s:%s', host, port);
+  console.log('YAML server listening at http://%s:%s', host, port);
 });

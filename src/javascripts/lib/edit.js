@@ -1,5 +1,5 @@
 $(function() {
-  var baseurl = "http://localhost:4001";
+  var baseurl = "http://localhost:4001/edit";
 
   $('[data-edit]')
     .each(function(i, el) {

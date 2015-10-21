@@ -2,6 +2,8 @@
 
 "use strict"
 
+basicAuth = require('basic-auth-connect')
+
 module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-connect"
   grunt.loadNpmTasks "grunt-contrib-copy"
@@ -67,13 +69,6 @@ module.exports = (grunt) ->
           src: ["lodash.min.js"]
           dest: "src/javascripts/vendor"
         }]
-      # jeditable:
-      #   files: [{
-      #     expand: true
-      #     cwd: "src/bower_components/editable/"
-      #     src: ["editable.min.js"]
-      #     dest: "src/javascripts/vendor"
-      #   }]
 
     exec:
       bower:
@@ -90,8 +85,8 @@ module.exports = (grunt) ->
           async: true
 
     watch:
-      options:
-        livereload: true
+      # options:
+      #   livereload: true
       source:
         files: [
           "src/_drafts/**/*"
@@ -112,11 +107,20 @@ module.exports = (grunt) ->
         ]
 
     connect:
+      options:
+        port: 4000
+        base: 'public'
+        hostname: '*'
+        # livereload: true
       server:
+        {}
+      authServer:
         options:
-          port: 4000
-          base: 'public'
-          livereload: true
+          middleware: [
+            (req, res, next) ->
+              next()
+          ]
+          # middleware: [ basicAuth('admin', '1234') ]
 
 
   grunt.registerTask "build:dev", [
@@ -139,9 +143,10 @@ module.exports = (grunt) ->
 
   grunt.registerTask "edit", [
     "build:dev"
-    "connect:server"
+    "connect:authServer"
     "shell:edit"
     "watch"
+    "shell:edit:kill"
   ]
 
   grunt.registerTask "default", [
