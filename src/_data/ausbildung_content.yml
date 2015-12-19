@@ -1,3 +1,10 @@
-first_block: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed rerum veritatis assumenda corporis voluptas repudiandae eos fugiat quod natus necessitatibus dolores enim, maxime molestiae voluptates repellendus quos animi numquam. Nulla!'
-second_block: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed rerum veritatis assumenda corporis voluptas repudiandae eos fugiat quod natus necessitatibus dolores enim, maxime molestiae voluptates repellendus quos animi numquam. Nulla!'
-third_block: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed rerum veritatis assumenda corporis voluptas repudiandae eos fugiat quod natus necessitatibus dolores enim, maxime molestiae voluptates repellendus quos animi numquam. Nulla!'
+first_block: >
+  Jeden 1. Donnerstag im Monat  findet der Gesamtwehrdienst statt. 2 Zug- und
+  2 Gruppenführer teilen sich den Jahresausbildungsplan. Die erste Gruppe hat im
+  Frühjahr/Sommer wöchentlich Dienst. Zusätzlich finden auf Zugebene
+  Fortbildungen für Atemschutzgeräteträger und Führungskräfte statt. Die Dienste
+  gliedern sich in theoretischen und praktischen Diensten für den Bereich
+  abwehrenden Brandschutz/Hilfeleistung sowie Themen aus dem Bereich vorbeugender
+  Brandschutz.
+second_block: 'Um eine realitätsnahe Atmosphäre für die Atemschutzgeräteträger zu erzeugen, findet 2x jährlich eine Ausbildung im Brandhaus statt'
+third_block: Bei der  technische Hilfeleistung bei Verkehrsunfällen ist die enge Absprache zwischen Feuerwehr und Rettungsdienst unerläßlich.
