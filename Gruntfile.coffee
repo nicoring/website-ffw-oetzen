@@ -2,11 +2,15 @@
 
 "use strict"
 
+basicAuth = require('basic-auth-connect')
+
 module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-connect"
   grunt.loadNpmTasks "grunt-contrib-copy"
   grunt.loadNpmTasks "grunt-contrib-watch"
   grunt.loadNpmTasks "grunt-exec"
+  grunt.loadNpmTasks "grunt-shell-spawn"
+  grunt.loadNpmTasks "grunt-contrib-imagemin"
 
   grunt.initConfig
 
@@ -70,12 +74,20 @@ module.exports = (grunt) ->
     exec:
       bower:
         cmd: "bower install"
-      jekyll:
+      jekyllProd:
+        cmd: "JEKYLL_ENV=production jekyll build --trace"
+      jekyllDev:
         cmd: "jekyll build --trace"
 
+    shell:
+      edit:
+        command: "node server.js"
+        options:
+          async: true
+
     watch:
-      options:
-        livereload: true
+      # options:
+      #   livereload: true
       source:
         files: [
           "src/_drafts/**/*"
@@ -92,28 +104,62 @@ module.exports = (grunt) ->
           "src/**/*.md"
         ]
         tasks: [
-          "exec:jekyll"
+          "exec:jekyllDev"
         ]
 
     connect:
+      options:
+        port: 4000
+        base: 'public'
+        hostname: '*'
+        # livereload: true
       server:
+        {}
+      authServer:
         options:
-          port: 4000
-          base: 'public'
-          livereload: true
+          middleware: [
+            (req, res, next) ->
+              next()
+          ]
+          # middleware: [ basicAuth('admin', '1234') ]
+
+    imagemin:
+      dynamic:
+        options:
+          optimizationLevel: 7
+        files: [{
+          expand: true
+          cwd: "src/raw_images"
+          src: ["**/*.{png,jpg,gif,svg}"]
+          dest: "src/images"
+        }]
 
 
 
-  grunt.registerTask "build", [
+  grunt.registerTask "build:dev", [
     "exec:bower"
     "copy"
-    "exec:jekyll"
+    "exec:jekyllDev"
+  ]
+
+  grunt.registerTask "build:prod", [
+    "exec:bower"
+    "copy"
+    "exec:jekyllProd"
   ]
 
   grunt.registerTask "serve", [
-    "build"
+    "build:prod"
     "connect:server"
     "watch"
+  ]
+
+  grunt.registerTask "edit", [
+    "build:dev"
+    "connect:authServer"
+    "shell:edit"
+    "watch"
+    "shell:edit:kill"
   ]
 
   grunt.registerTask "default", [

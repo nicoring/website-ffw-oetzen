@@ -1,5 +1,6 @@
-language: node_js
-node_js: "iojs"
+language: ruby
+rvm:
+  - 2.0.0
 install:
   - npm install -g grunt-cli
   - npm install -g bower
@@ -8,7 +9,7 @@ install:
   - npm install
   - bower install
 script:
-  - grunt build
+  - grunt build:prod
 deploy:
   provider: s3
   access_key_id: AKIAJ7X54GBDV77NRKSQ

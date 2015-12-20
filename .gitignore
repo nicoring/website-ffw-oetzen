@@ -6,3 +6,4 @@ src/javascripts/vendor
 src/_sass/vendor
 credentials.csv
 */**/*.psd
+src/raw_images/*
