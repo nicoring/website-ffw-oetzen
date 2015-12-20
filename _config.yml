@@ -11,6 +11,7 @@ source: src
 destination: public
 exclude:
   - bower_components
+  - raw_images
 sass:
   sass_dir: _sass
   style: :compressed
