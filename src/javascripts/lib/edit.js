@@ -1,5 +1,5 @@
 $(function() {
-  var baseurl = "http://localhost:4001/edit";
+  var baseurl = "http://localhost:4001";
 
   $('[data-edit]')
     .each(function(i, el) {
@@ -21,5 +21,5 @@ $(function() {
         indicator : 'Saving...',
         tooltip   : 'Click to edit...'
       });
-    })
+    });
 });

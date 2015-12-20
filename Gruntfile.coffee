@@ -10,6 +10,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-watch"
   grunt.loadNpmTasks "grunt-exec"
   grunt.loadNpmTasks "grunt-shell-spawn"
+  grunt.loadNpmTasks "grunt-contrib-imagemin"
 
   grunt.initConfig
 
@@ -122,6 +123,18 @@ module.exports = (grunt) ->
           ]
           # middleware: [ basicAuth('admin', '1234') ]
 
+    imagemin:
+      dynamic:
+        options:
+          optimizationLevel: 7
+        files: [{
+          expand: true
+          cwd: "src/raw_images"
+          src: ["**/*.{png,jpg,gif,svg}"]
+          dest: "src/images"
+        }]
+
+
 
   grunt.registerTask "build:dev", [
     "exec:bower"
@@ -136,7 +149,7 @@ module.exports = (grunt) ->
   ]
 
   grunt.registerTask "serve", [
-    "build:dev"
+    "build:prod"
     "connect:server"
     "watch"
   ]
