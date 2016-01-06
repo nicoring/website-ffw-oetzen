@@ -101,6 +101,7 @@ module.exports = (grunt) ->
           "src/javascripts/**/*"
           "_config.yml"
           "src/**/*.html"
+          "src/**/*.xml"
           "src/**/*.md"
         ]
         tasks: [
