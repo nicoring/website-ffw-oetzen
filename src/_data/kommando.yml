@@ -1,17 +1,17 @@
   -
     title: Ortsbrandmeister
     name: Hartmut Müller
-    image: '/images/kommando/hartmut.jpg'
+    image: '/images/kommando/hartmut-ortsbm.jpg'
     description: Ist verantwortlich für die Einsatzbereitschaft der Wehr. Zuständig für den vorbeugenden Brandschutz.
   -
     title: Stellv. Ortsbrandmeister
     name: Jens Westermann
-    image: '/images/kommando/jens.jpg'
+    image: '/images/kommando/jens-stellv-ortsbm.jpg'
     description: Vertritt den Ortsbrandmeister bei dessen Abwesenheit. Bildet aus und führt die Ausbildungsstatistik.
   -
     title: Gruppenführer
     name: Sebastian Gade
-    image: '/images/kommando/sebastian.jpg'
+    image: '/images/kommando/sebastian-gruppenfuehrer.jpg'
     description: Führt eine taktische Einheit, bildet aus.
   -
     title: Sicherheitsbeauftragter
@@ -21,20 +21,20 @@
   -
     title: Gerätewart
     name: Torsten Kirschke
-    image: '/images/kommando/kirschie.jpg'
-    description: Verantwortlich für die Einsatzbereitschaft von Ausrüstung und Gerät sowie die Einhaltung von Prüffristen.
+    image: '/images/kommando/thorsten-geraetewart.jpg'
+    description: Verantwortlich für die Einsatzbereitschaft von Ausrüstung und Gerät, sowie für die Einhaltung von Prüffristen.
   -
     title: Kassenwart
     name: Ulf-Achim Wittenberg
-    image: '/images/kommando/ulf.jpg'
-    description: Verantwortlich für die finanzlellen Belange der Wehr.
+    image: '/images/kommando/ulf-kassenwart.jpg'
+    description: Verantwortlich für die finanziellen Belange der Wehr.
   -
     title: Schriftführerin
     name: Ilka Witte
-    image: '/images/avatar.png'
+    image: '/images/kommando/ilka-schriftfuehrer.jpg'
     description: Führt Protokolle bei Sitzungen und Versammlungen. Wickelt einen Teil des Schriftverkehrs der Feuerwehr ab.
   -
     title: Beisitzer
     name: Hannes Luhr
-    image: '/images/avatar.png'
+    image: '/images/kommando/hannes-beisitzer.jpg'
     description:
