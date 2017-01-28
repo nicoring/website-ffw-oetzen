@@ -15,8 +15,8 @@
     description: Führt eine taktische Einheit, bildet aus.
   -
     title: Sicherheitsbeauftragter
-    name: Wolfgang Güttner
-    image: '/images/kommando/paule.jpg'
+    name: Rüdiger Gade
+    image: '/images/kommando/ruediger-gade.jpg'
     description: Unterstützt den Ortsbrandmeister bei allen Fragen zur Unfallverhütung und überwacht die Einhaltung der Sicherheitsbestimmungen.
   -
     title: Gerätewart
@@ -35,6 +35,6 @@
     description: Führt Protokolle bei Sitzungen und Versammlungen. Wickelt einen Teil des Schriftverkehrs der Feuerwehr ab.
   -
     title: Beisitzer
-    name: Hannes Luhr
-    image: '/images/kommando/hannes-beisitzer.jpg'
+    name: Torge Kirschke
+    image: '/images/avatar.png'
     description:
