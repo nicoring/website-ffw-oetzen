@@ -1,11 +1,11 @@
 language: ruby
 rvm:
-  - 2.2.5
+  - 2.0.0
 install:
   - npm install -g grunt-cli
   - npm install -g bower
-  - gem install jekyll
-  - gem install jekyll-redirect-from
+  - gem install jekyll -v 3.4.2
+  - gem install jekyll-redirect-from -v 0.12.1
   - npm install
   - bower install
 script:
