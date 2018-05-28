@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - 2.1.0
+  - 2.2.5
 install:
   - npm install -g grunt-cli
   - npm install -g bower
