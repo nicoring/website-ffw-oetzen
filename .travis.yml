@@ -4,6 +4,7 @@ rvm:
 install:
   - npm install -g grunt-cli
   - npm install -g bower
+  - gem install public_suffix -v 2.0.5
   - gem install jekyll -v 3.4.2
   - gem install jekyll-redirect-from -v 0.12.1
   - npm install
