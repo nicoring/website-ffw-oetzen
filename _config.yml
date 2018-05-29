@@ -1,23 +1,28 @@
-# Site settings
+---
 title: Freiwillige Feuerwehr Oetzen
-
+timezone: UTC
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
 author: Nico Ring
-description: Die Freiwillige Feuerwehr Oetzen ist eine von drei Stützpunktwehren der Samtgemeinde Rosche. Zusammen mit den Ortswehren Jarlitz, Stöcken und Süttorf-Dörmte bildet die Ortswehr Oetzen den Zug Nord West.
-keywords: Feuerwehr Oetzen, Freiwillige Feuerwehr, Oetzen, Freiwillige Feuerwehr Oetzen, FF Oetzen, Stützpunktwehr, LF 8, TLF 16, Feuerwehr, Tanklöschfahrzeug, Löschgruppenfahrzeug
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://feuerwehr-oetzen.de" # the base hostname & protocol for your site
-
-# Build settings
+description: Die Freiwillige Feuerwehr Oetzen ist eine von drei Stützpunktwehren der
+  Samtgemeinde Rosche. Zusammen mit den Ortswehren Jarlitz, Stöcken und Süttorf-Dörmte
+  bildet die Ortswehr Oetzen den Zug Nord West.
+keywords: Feuerwehr Oetzen, Freiwillige Feuerwehr, Oetzen, Freiwillige Feuerwehr Oetzen,
+  FF Oetzen, Stützpunktwehr, LF 8, TLF 16, Feuerwehr, Tanklöschfahrzeug, Löschgruppenfahrzeug
+baseurl: ''
+url: http://feuerwehr-oetzen.de
 source: src
 destination: public
 exclude:
-  - bower_components
-  - raw_images
+- bower_components
+- raw_images
 sass:
   sass_dir: _sass
   style: :compressed
   sourcemaps: :auto
 markdown: kramdown
-
-# Plugins
-#gems:
